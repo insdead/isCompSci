@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+  <main class="intro-section">
+  <div class="container">
+      <div id="movie-card-list">
+          {% for post in post %}
+            <div class="movie-card">
+              <div class="movie-card__overlay" style="background-image: url(https://www.gyanblog.com/assets/img/2018/05/php.png);"></div>
+              <div class="movie-card__content">
+                <div class="movie-card__header">
+                  <h1 class="movie-card__title">{{ post.title }}</h1>
+                  <h4 class="movie-card__info">{{ post.date_posted }}</h4>
+                </div>
+                <p class="movie-card__desc">{{ post.content }}</p>
+                <button class="btn btn-outline movie-card__button" type="button">Read More...</button>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+      <div class="grid">
+          <div class="column-xs-12">
+              <div class="controls">
+                  <button class="previous" style="display: none;">
+                  <button class="next" style="display: none;">     
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+  </main>
+{% endblock content %}

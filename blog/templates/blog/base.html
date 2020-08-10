@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <script src="{% static 'assets/external/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/external/partic_lib.js' %}"></script>
+        <script src="{% static 'assets/external/icons.js' %}" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/blog_cards.css' %}">
+        {% if title %}
+            <title>IsCompSci - {{ title }}</title>
+        {% else %}
+            <title>IsCompSci</title>
+        {% endif %}
+    </head>
+<body>
+<canvas id="c"></canvas>
+
+<nav class="flex-nav">
+<div class="container">
+    <div class="grid">
+    <div class="column-xs-9 column-md-8">
+        <p id="logo"><a href="../">Olzhas Mukayev</a><span id="highlight">.</span></p>
+    </div>
+    <div class="column-xs-3 column-md-4">
+    <a href="#" class="toggle-nav" style="margin-top: 18px;">Menu <i class="ion-navicon-round"></i></a>
+        <ul style="margin-top: 5%;">
+        <li><a href="../resume">Resume</a></li>
+        <li><a href="../blog">Blog</a></li>
+        <li><a href="#">Telegram</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<nav class="flex-nav">
+<p id="logo" style="text-align: center;">Made with ♥️ by Olzhas Mukayev<span id="highlight">.</span></p>
+<div id="icons">
+    <div id="margin-to">
+        <a href="https://t.me/isCompSci" target="_blanck"><li class="list_ico"><img class="icon" src="{% static 'assets/external/telegram.svg' %}" alt=""></li></a>
+        <a href="https://www.instagram.com/wannabejustlikeyou/" target="_blanck"><li class="list_ico"><img class="icon" src="{% static 'assets/external/instagram.svg' %}" alt=""></li></a>
+        <a href="https://github.com/insdead" target="_blanck"><li class="list_ico"><img class="icon" src="{% static 'assets/external/github.svg' %}" alt=""></li></a>
+    </div>
+</div>
+</nav>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/partic.js' %}"></script>
+</body>
+</html>

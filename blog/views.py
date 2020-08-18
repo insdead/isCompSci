@@ -13,3 +13,6 @@ def home(request):
 
 def resume(request):
     return render(request, 'blog/resume.html', {'title':'Resume'})
+
+def article(request):
+    return render(request, 'blog/article.html', {'title':'Article'})

@@ -6,14 +6,14 @@
       <div id="movie-card-list">
           {% for post in post %}
             <div class="movie-card">
-              <div class="movie-card__overlay" style="background-image: url('{{ post.image.url }}'); max-width: 100%; max-height: 100%;"></div>
+              <div class="movie-card__overlay" style="background-image: url('{{ post.image.url }}'); max-width: 100%; max-height: 100%; z-index: 99;"></div>
               <div class="movie-card__content">
                 <div class="movie-card__header">
                   <h1 class="movie-card__title">{{ post.title }}</h1>
                   <h4 class="movie-card__info">{{ post.date_posted }}</h4>
                 </div>
-                <p class="movie-card__desc">{{ post.content }}</p>
-                <button class="btn btn-outline movie-card__button" type="button">Read More...</button>
+                <p class="movie-card__desc" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ post.content }}</p>
+                <a href="{% url 'post-detail' post.id %}"><button class="btn btn-outline movie-card__button" type="button">Read More...</button></a>
               </div>
             </div>
           {% endfor %}

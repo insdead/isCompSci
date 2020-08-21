@@ -23,5 +23,6 @@ from users import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
+    path('login/', user_views.login, name='login'),
     path('', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

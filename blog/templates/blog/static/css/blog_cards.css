@@ -46,6 +46,12 @@ button:focus {
   }
 }
 @media screen and (max-width: 600px) {
+  .movie-card__overlay {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .movie-card {
     background-position: 50% 0%;
     background-size: cover;

@@ -1,19 +1,19 @@
 {% extends "blog/base.html" %}
 {% load static %}
 {% block content %}
-  <main class="intro-section">
+  <main class="intro-section" style="background-color: red;">
   <div class="container">
       <div id="movie-card-list">
           {% for post in post %}
             <div class="movie-card">
-              <div class="movie-card__overlay" style="background-image: url('{{ post.image.url }}'); max-width: 100%; max-height: 100%; z-index: 99;"></div>
+              <div class="movie-card__overlay" style="background-image: url('{{ post.image.url }}'); z-index: 99; background-repeat: no-repeat; background-size: contain;"></div>
               <div class="movie-card__content">
                 <div class="movie-card__header">
                   <h1 class="movie-card__title">{{ post.title }}</h1>
                   <h4 class="movie-card__info">{{ post.date_posted }}</h4>
                 </div>
                 <p class="movie-card__desc" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ post.content }}</p>
-                <a href="{% url 'post-detail' post.id %}"><button class="btn btn-outline movie-card__button" type="button">Read More...</button></a>
+                <a class="card_blog_view" href="{% url 'post-detail' post.id %}"><button class="btn btn-outline movie-card__button" type="button">Read More...</button></a>
               </div>
             </div>
           {% endfor %}
